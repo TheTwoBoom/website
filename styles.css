@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    color: #00ff00;
+    transition: opacity 1s ease-in-out;
+}
+.terminal {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #000;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.terminal::before {
+    content: '$';
+    color: #00ff00;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.terminal::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
